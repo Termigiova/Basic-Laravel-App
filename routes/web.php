@@ -25,6 +25,6 @@ Route::get('/products', 'ProductController@index');
 
 Route::post('/getRequest','ProductController@processProduct');
 
-Route::get('/listSales', 'SaleController@getIndex');
+Route::get('/listSales', 'SaleController@listSalesByShop');
 
 Route::get('/getSales','SaleController@getData');

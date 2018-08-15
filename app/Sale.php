@@ -30,4 +30,20 @@ class Sale extends Model
         $this->shop_id = (int) $shop_id;
     }
 
+    public function scopeJoinWithShop($query) {
+        return $query->join('shop', 'shop.id','=','sales.shop_id');
+    }
+
+    public function scopeJoinWithUsers($query) {
+        return $query->join('users', 'users.id', '=', 'sales.user_id');
+    }
+
+    public function scopeJoinWithDetails($query) {
+        return $query->join('details', 'details.sales_id', '=', 'sales.id');
+    }
+
+    public function scopeJoinWithProduct($query) {
+        return $query->join('product', 'details.product_id', '=', 'product.id');
+    }
+
 }

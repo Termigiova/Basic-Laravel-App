@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Shop;
+use App\Sale;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
@@ -9,10 +11,24 @@ use Yajra\DataTables\DataTables;
 class SaleController extends Controller
 {
 
-    public function listSales()
-    {
+    public function listSalesByShop() {
+        $sales = Sale::query()
+            ->joinWithShop()
+            ->joinWithUsers()
+            ->joinWithDetails()
+            ->joinWithProduct()
+            ->select('users.name as userName',
+                'shop.name as shopName',
+                'sales.date as saleDate',
+                'product.name as productName',
+                'product.price as productPrice')
+            ->get();
 
+        return view('sales.list', compact('sales'));
     }
+
+
+    // Functions to test DataTables library
 
     public function getIndex()
     {

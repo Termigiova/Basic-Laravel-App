@@ -1,27 +1,36 @@
 @extends('layouts.app')
 
-@section('header')
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-@endsection
-
 @section('content')
     <div class="container">
-        <table class="table table-bordered" id="users-table">
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>Shop name</th>
-                <th>Date</th>
-                <th>User name</th>
-            </tr>
-            </thead>
-        </table>
-    </div>
-@endsection
 
-@section('scripts')
-    <!-- DataTables -->
-    <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
-    <script src="{{ URL::asset('js/datatables.js') }}"></script>
+        <div class="row">
+            <h3>List of sales</h3>
+        </div>
+
+        <div class="row">
+            <table class="table table-hover table-bordered table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th class="">User name</th>
+                    <th scope="">Shop name</th>
+                    <th scope="">Date</th>
+                    <th>Product name</th>
+                    <th>Product price</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($sales as $sale)
+                    <tr>
+                        <th>{{ $sale->userName }}</th>
+                        <th>{{ $sale->shopName }}</th>
+                        <th>{{ $sale->saleDate }}</th>
+                        <th>{{ $sale->productName }}</th>
+                        <th>${{ $sale->productPrice }}</th>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+
+    </div>
 @endsection
