@@ -16,6 +16,7 @@
                     <th scope="">Date</th>
                     <th>Product name</th>
                     <th>Product price</th>
+                    <th>Quantity</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -26,6 +27,7 @@
                         <th>{{ $sale->saleDate }}</th>
                         <th>{{ $sale->productName }}</th>
                         <th>${{ $sale->productPrice }}</th>
+                        <th>{{ $sale->quantity }}</th>
                     </tr>
                 @endforeach
                 </tbody>

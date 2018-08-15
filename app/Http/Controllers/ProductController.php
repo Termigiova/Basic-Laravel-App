@@ -34,8 +34,6 @@ class ProductController extends Controller
             $this->buyProduct();
     }
 
-
-
     private function setUserId() {
         if (Auth::check())
             $this->user_id = Auth::user()->getAuthIdentifier();

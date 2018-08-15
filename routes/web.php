@@ -23,8 +23,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/products', 'ProductController@index');
 
-Route::post('/getRequest','ProductController@processProduct');
-
 Route::get('/listSales', 'SaleController@listSalesByShop');
 
-Route::get('/getSales','SaleController@getData');
+Route::post('/getRequest','ProductController@processProduct');
+
+
+// Testing DataTables
+//Route::get('/getSales','SaleController@getData');

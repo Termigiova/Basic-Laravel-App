@@ -21,7 +21,8 @@ class SaleController extends Controller
                 'shop.name as shopName',
                 'sales.date as saleDate',
                 'product.name as productName',
-                'product.price as productPrice')
+                'product.price as productPrice',
+                'details.quantity as quantity')
             ->get();
 
         return view('sales.list', compact('sales'));

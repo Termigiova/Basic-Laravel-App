@@ -25,7 +25,6 @@ class Sale extends Model
         $this->user_id = (int) $user_id;
     }
 
-
     public function setShopId($shop_id) {
         $this->shop_id = (int) $shop_id;
     }
