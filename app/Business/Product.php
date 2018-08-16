@@ -36,7 +36,7 @@ class Product {
     }
 
     private function setQuantity($quantity) {
-        $this->quantity = (int) $quantity;
+        $this->quantity = ((int) $quantity > 0) ? (int) $quantity : 0;
     }
 
     public function valuesAreSet() {
@@ -44,6 +44,26 @@ class Product {
                 !empty($this->product_id) &&
                 !empty($this->shop_id) &&
                 !empty($this->quantity);
+    }
+
+    public function valuesAreValid() {
+
+    }
+
+    private function userExists() {
+
+    }
+
+    private function productExists() {
+
+    }
+
+    private function shopExists() {
+
+    }
+
+    private function quantityIsCorrect() {
+
     }
 
     public function buyProduct() {

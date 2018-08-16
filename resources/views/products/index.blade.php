@@ -62,6 +62,5 @@
 
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
-    <script src="js/errorState.js"></script>
     <script src="js/products.js"></script>
 @endsection
