@@ -11,12 +11,12 @@
             <table class="table table-hover table-bordered table-striped">
                 <thead class="thead-dark">
                 <tr>
-                    <th class="">User name</th>
-                    <th scope="">Shop name</th>
-                    <th scope="">Date</th>
+                    <th>User name</th>
+                    <th>Shop name</th>
                     <th>Product name</th>
                     <th>Product price</th>
                     <th>Quantity</th>
+                    <th>Date</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -24,10 +24,10 @@
                     <tr>
                         <th>{{ $sale->userName }}</th>
                         <th>{{ $sale->shopName }}</th>
-                        <th>{{ $sale->saleDate }}</th>
                         <th>{{ $sale->productName }}</th>
                         <th>${{ $sale->productPrice }}</th>
                         <th>{{ $sale->quantity }}</th>
+                        <th>{{ $sale->saleDate }}</th>
                     </tr>
                 @endforeach
                 </tbody>

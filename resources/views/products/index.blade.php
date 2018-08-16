@@ -62,49 +62,6 @@
 
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
-    <script>
-        $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            $('.getRequest').click( function() {
-                let product = $(this).data('product');
-                let shop = $('#storeSelect option:selected').val();
-                let quantityValueName = 'quantityValue' + product;
-                let quantity = $('input[name=' + quantityValueName + ']').val();
-                let url = "/getRequest";
-
-                $.ajax({
-
-                    type: "POST",
-                    url: url,
-                    data: {
-                        product: product,
-                        shop: shop,
-                        quantity: quantity,
-                    },
-                    success: function (data) {
-                        swal({
-                            title: '<strong>Rejoice! You just bought a pepe</strong>',
-                            type: 'success',
-                            html:
-                                '<img src="https://thumbs.gfycat.com/HappyAmazingDonkey-size_restricted.gif">',
-                            showCloseButton: true,
-                            showCancelButton: false,
-                            focusConfirm: false,
-                            confirmButtonText:
-                                '<i class="fa fa-thumbs-up"></i> Neat',
-                            confirmButtonAriaLabel: 'Thumbs up, great!',
-                        });
-                    },
-                    error: function (data) {
-                        console.log('Error:', data);
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="js/errorState.js"></script>
+    <script src="js/products.js"></script>
 @endsection
