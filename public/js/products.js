@@ -35,6 +35,8 @@ $(document).ready(function() {
             case "success":
                 swal({
                     title: '<strong>Rejoice! Your purchase is complete</strong>',
+                    html:
+                        '<img src="https://thumbs.gfycat.com/HappyAmazingDonkey-size_restricted.gif">',
                     type: 'success',
                     confirmButtonText: 'Neat',
                 });
